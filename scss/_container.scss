@@ -1,0 +1,227 @@
+.container {
+    height: 100vh;
+    background: url('../images/bg-mobile.png'), $veryDarkBlue;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    padding: 120px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    @include breakpoint-up(large){
+        background: url('../images/bg-desktop.png'), $veryDarkBlue;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+    }
+
+    &__flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include breakpoint-up(large){
+            flex-direction: row;
+            align-items: flex-end;
+        }
+    }
+
+    &__top {
+        position: relative;
+        width: 327px;
+        padding: 40px;
+        background-color: $darkBlue;
+        border-radius: 10px 50% 10px 10px;
+        margin-bottom: 16px;
+
+        @include breakpoint-up(large){
+            margin-bottom: 0;
+            margin-right: 32px;
+        }
+
+        @include breakpoint-up(xlarge) {
+            width: 350px;
+        }
+
+    }
+
+    &__overlay {
+        position: absolute;
+        width: 112px;
+        height: 112px;
+        top: 0%;
+        right: 0%;
+        background-color: $darkBlue;
+        border-top-right-radius: 85%;
+    }
+    &__overlay2 {
+        position: absolute;
+        height: 40px;
+        width: 60%;
+        top: 0%;
+        background-color: $darkBlue;
+    }
+
+    &__logo {
+        margin-bottom: 32px;
+    }
+
+    &__icons {
+        display: flex;
+        .icon_holder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            width: 50px;
+            background-color: $veryDarkBlue;
+
+            border-radius: 10px;
+            &:not(:last-child){
+                margin-right: 16px;
+            }
+        }
+        .icon {
+            width: 50%;
+            font-size: 25px;
+        }
+
+        .icon1 {
+            width: 40%;
+        }
+    }
+
+
+    &__bottom {
+        position: relative;
+        width: 327px;
+        padding: 32px;
+        background-color: $darkBlue;
+        border-radius: 10px;
+
+        @include breakpoint-up(large){
+            width: 450px;
+        }
+
+        @include breakpoint-up(xlarge) {
+            width: 540px;
+            padding: 40px;
+        }
+
+        > p {
+            font-size: 16px;
+            color: $paleBlue;
+            margin-bottom: 16px;
+            > span {
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__progressbar_bg {
+        width: 100%;
+        height: 20px;
+        padding: 2px;
+        background-color: $veryDarkBlue;
+        border-radius: 9999px;
+        margin-bottom: 10px;
+    }
+
+    &__progressbar {
+        position: relative;
+        height: 100%;
+        width: 81.5%;
+        border-radius: 9999px;
+        background: $gradient;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            padding: 2px;
+            border-radius: 50%;
+            background-color: $paleBlue;
+            top: 2px;
+            right: 2px;
+        }
+    }
+
+    &__label {
+        color: $paleBlue;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        @include breakpoint-up(large) {
+            margin-bottom: 0;
+        }
+
+        > span {
+            font-weight: 700;
+        }
+    }
+
+    &__float {
+        position: absolute;
+        bottom: -35.5px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 16px 22px;
+        width: 181px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+
+        @include breakpoint-up(large){
+            bottom: 85%;
+            left: calc(100% - 213px);
+            transform: translateX(0);
+        }
+
+        @include breakpoint-up(xlarge){
+            left: calc(100% - 221px);
+        }
+
+        > p{
+            text-transform: uppercase;
+            color: $grayishBlue;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            display: inline;
+
+        }
+        
+        > span {
+            font-size: 40px;
+            line-height: 36px;
+            font-weight: 700;
+            padding-bottom: 3px;
+            color: $veryDarkBlue;
+            margin-right: 8px;
+        }
+
+        .traingle {
+            position: absolute;
+            border-top: 14px solid white;
+            border-right: 14px solid white;
+            border-bottom: 14px solid transparent;
+            border-left: 14px solid transparent;
+            bottom: -20px;
+            right: 0;
+            display: none;
+
+            @include breakpoint-up(large){
+                display: block;
+            }
+        }
+    }
+}
